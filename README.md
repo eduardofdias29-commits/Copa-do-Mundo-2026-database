@@ -2,16 +2,15 @@
 
 Dashboard com dados da Copa do Mundo FIFA 2026: elencos, treinadores, classificação da fase de grupos, chaveamento do mata-mata, estatísticas e estádios — tudo consumindo uma API própria.
 
-🔗 **[Ver o site no ar](#)** _(link depois do deploy)_
+🔗 **[Ver o site no ar](https://copa-do-mundo-2026-database.onrender.com)**
 
-![preview do site](#)
-_(screenshot aqui)_
+![preview do site](static/assets/GifCopaDatabase.gif)
 
 ## Sobre o projeto
 
 Projeto pessoal e independente, sem vínculo oficial com a FIFA. Comecei depois do primeiro semestre da faculdade, usando as férias pra aprender SQLite na prática, e a Copa 2026 era um assunto que eu já ia acompanhar de qualquer jeito, então virou o tema natural do banco de dados.
 
-A ideia inicial era puxar tudo via API pública de futebol, mas as opções gratuitas eram limitadas demais pro que eu queria (elenco completo, valor de mercado, clube atual de cada jogador). Resolvi catalogar manualmente os nomes, valores e clubes de todos os jogadores convocados, atualizado até 22/07/2026.
+A ideia inicial era puxar tudo via API pública de futebol, mas as opções gratuitas eram limitadas demais pro que eu queria (elenco completo, valor de mercado, clube atual de cada jogador). Resolvi catalogar manualmente os nomes, valores e clubes de todos os jogadores convocados, atualizado até 22/07/2026 via Transfermarkt.
 
 A primeira versão da interface foi em Python com CustomTkinter, mas ficou lenta e limitada conforme o projeto cresceu (estatísticas, estádios, fotos, bandeiras...). Migrei pra Flask servindo uma API própria, com o front-end em HTML/CSS/JS puro sem framework.
 
