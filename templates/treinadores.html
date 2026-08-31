@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block titulo %}Treinadores{% endblock %}
+
+{% block conteudo %}
+
+<header class="conteudo-header">
+    <h1>Treinadores</h1>
+    <p>Os 48 técnicos da Copa — idade e quantas Copas do Mundo já dirigiram.</p>
+</header>
+
+<section class="treinadores-grid" id="treinadores-grid">
+    <div class="item-carregando">Carregando…</div>
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='treinadores.js') }}"></script>
+{% endblock %}

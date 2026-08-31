@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block titulo %}Fase de Grupos{% endblock %}
+
+{% block conteudo %}
+
+<header class="conteudo-header">
+    <h1>Fase de Grupos</h1>
+    <p>Classificação, rodadas e sedes de cada grupo da Copa do Mundo 2026.</p>
+</header>
+
+<div class="grupos-tabs" id="grupos-tabs"></div>
+
+<div class="fase-grupos-layout">
+
+    <div class="fase-grupos-principal">
+
+        <section class="card-tabela" id="card-classificacao">
+            <div class="card-tabela-header">
+                <h2 id="titulo-grupo-ativo">Grupo A</h2>
+                <span class="tag-top" id="legenda-classificados">1º e 2º avançam</span>
+            </div>
+
+            <table class="tabela-dados">
+                <thead>
+                    <tr>
+                        <th class="col-pos">#</th>
+                        <th class="col-selecao">SELEÇÃO</th>
+                        <th>P</th>
+                        <th>V</th>
+                        <th>E</th>
+                        <th>D</th>
+                        <th>SG</th>
+                    </tr>
+                </thead>
+                <tbody id="corpo-classificacao">
+                    <tr><td colspan="7" class="item-carregando">Carregando…</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="card-tabela" id="card-sedes">
+            <div class="card-tabela-header">
+                <h2 id="titulo-sedes-grupo">Sedes do Grupo A</h2>
+                <span class="tag-top" id="contador-sedes"></span>
+            </div>
+            <div class="sedes-lista" id="sedes-lista">
+                <div class="item-carregando">Carregando…</div>
+            </div>
+        </section>
+
+    </div>
+
+    <aside class="fase-grupos-rodadas">
+
+        <div id="rodadas-lista">
+            <div class="item-carregando">Carregando…</div>
+        </div>
+
+        <section class="card-tabela resumo-fase-card" id="resumo-fase">
+            <div class="card-tabela-header">
+                <h2>Resumo da Fase</h2>
+            </div>
+            <div class="resumo-fase-grid">
+                <div class="stat-tile resumo-fase-tile">
+                    <div class="stat-valor" id="resumo-total-gols">—</div>
+                    <div class="stat-rotulo">GOLS EM <span id="resumo-total-jogos">—</span> JOGOS</div>
+                </div>
+                <div class="stat-tile resumo-fase-tile">
+                    <div class="stat-valor" id="resumo-media-gols">—</div>
+                    <div class="stat-rotulo">MÉDIA POR JOGO</div>
+                </div>
+            </div>
+        </section>
+
+    </aside>
+
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='classificacao.js') }}"></script>
+{% endblock %}

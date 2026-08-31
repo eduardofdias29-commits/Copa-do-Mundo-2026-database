@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block titulo %}Perfil do Jogador{% endblock %}
+
+{% block conteudo %}
+
+<header class="conteudo-header">
+    <h1 id="perfil-titulo-pagina">Perfil</h1>
+</header>
+
+<section class="card-tabela perfil-card" id="perfil-card">
+    <a href="javascript:history.back()" class="perfil-voltar">← Voltar</a>
+    <span class="tag-top perfil-tag-topo">PERFIL DO ATLETA</span>
+
+    <div class="perfil-header" id="perfil-header">
+        <div class="item-carregando">Carregando…</div>
+    </div>
+
+    <div class="perfil-meta-grid" id="perfil-meta-grid" hidden>
+        <div class="perfil-meta-item">
+            <span class="perfil-meta-rotulo">POSIÇÃO</span>
+            <span class="perfil-meta-valor" id="perfil-posicao">—</span>
+        </div>
+        <div class="perfil-meta-item">
+            <span class="perfil-meta-rotulo">IDADE</span>
+            <span class="perfil-meta-valor" id="perfil-idade">—</span>
+        </div>
+        <div class="perfil-meta-item">
+            <span class="perfil-meta-rotulo">CLUBE</span>
+            <span class="perfil-meta-valor perfil-clube-valor" id="perfil-clube">—</span>
+        </div>
+    </div>
+
+    <div class="perfil-valor-secao" id="perfil-valor-secao" hidden>
+        <span class="perfil-meta-rotulo">VALOR DE MERCADO</span>
+        <span class="perfil-valor-destaque" id="perfil-valor">—</span>
+    </div>
+
+    <div class="perfil-stats-grid" id="perfil-stats-grid" hidden>
+        <div class="stat-tile perfil-stat-tile">
+            <div class="stat-valor" id="perfil-stat-jogos">—</div>
+            <div class="stat-rotulo">JOGOS</div>
+        </div>
+        <div class="stat-tile perfil-stat-tile">
+            <div class="stat-valor" id="perfil-stat-gols">—</div>
+            <div class="stat-rotulo">GOLS</div>
+        </div>
+        <div class="stat-tile perfil-stat-tile">
+            <div class="stat-valor" id="perfil-stat-assistencias">—</div>
+            <div class="stat-rotulo">ASSISTÊNCIAS</div>
+        </div>
+        <div class="stat-tile perfil-stat-tile">
+            <div class="stat-valor valor-com-icone"><span class="icone-cartao icone-cartao-amarelo"></span><span id="perfil-stat-amarelos">—</span></div>
+            <div class="stat-rotulo">CARTÕES AMARELOS</div>
+        </div>
+        <div class="stat-tile perfil-stat-tile">
+            <div class="stat-valor valor-com-icone"><span class="icone-cartao icone-cartao-vermelho"></span><span id="perfil-stat-vermelhos">—</span></div>
+            <div class="stat-rotulo">CARTÕES VERMELHOS</div>
+        </div>
+    </div>
+
+    <section class="card-tabela perfil-campo-card" id="perfil-campo-card" hidden>
+        <div class="card-tabela-header">
+            <h2>Posicionamento Tático</h2>
+        </div>
+        <div class="perfil-campo-wrap" id="perfil-campo-wrap"></div>
+    </section>
+
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const JOGADOR_ID = "{{ jogador_id }}";
+</script>
+<script src="{{ url_for('static', filename='jogador.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block titulo %}Mata-Mata{% endblock %}
+
+{% block conteudo %}
+
+<header class="conteudo-header">
+    <h1>Mata-Mata</h1>
+    <p>Da 2ª fase à grande final — confrontos, placares e sedes.</p>
+</header>
+
+<div class="mata-mata-layout">
+
+    <div class="mata-mata-principal">
+        <div class="bracket-wrap" id="bracket-wrap">
+            <div class="item-carregando">Carregando…</div>
+        </div>
+    </div>
+
+    <aside class="mata-mata-painel">
+        <div class="mata-mata-painel-header">
+            <h2 class="mata-mata-painel-titulo" id="mata-mata-painel-titulo">—</h2>
+            <div class="mata-mata-painel-setas">
+                <button type="button" class="mata-mata-painel-seta" id="mata-mata-seta-anterior"
+                        aria-label="Fase anterior" title="Fase anterior">‹</button>
+                <button type="button" class="mata-mata-painel-seta" id="mata-mata-seta-proxima"
+                        aria-label="Próxima fase" title="Próxima fase">›</button>
+            </div>
+        </div>
+
+        <div class="mata-mata-painel-scroll" id="mata-mata-painel-scroll">
+            <div id="mata-mata-fases-lista">
+                <div class="item-carregando">Carregando…</div>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='mata_mata.js') }}"></script>
+{% endblock %}

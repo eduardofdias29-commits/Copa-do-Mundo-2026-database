@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block titulo %}Seleções{% endblock %}
+
+{% block conteudo %}
+
+<header class="conteudo-header">
+    <h1>Seleções</h1>
+    <p>Escolha um grupo e depois uma seleção pra ver o elenco completo.</p>
+</header>
+
+<div class="grupos-tabs" id="grupos-tabs"></div>
+
+<section class="times-grid" id="times-grid">
+    <div class="item-carregando">Carregando…</div>
+</section>
+
+<section class="card-elenco" id="card-elenco" hidden>
+    <div class="elenco-header">
+        <div class="elenco-time-info">
+            <img id="elenco-escudo" class="elenco-escudo" src="" alt="">
+            <div>
+                <h2 id="elenco-nome-selecao">—</h2>
+                <span class="tag-grupo" id="elenco-tag-grupo">—</span>
+            </div>
+        </div>
+
+        <div class="elenco-treinador-card" id="elenco-treinador-card" hidden>
+            <img id="elenco-treinador-foto" class="elenco-treinador-foto" src="" alt="">
+            <div class="elenco-treinador-info">
+                <span class="elenco-treinador-rotulo">TÉCNICO</span>
+                <span class="elenco-treinador-nome" id="elenco-treinador-nome">—</span>
+                <div class="elenco-treinador-meta">
+                    <img id="elenco-treinador-bandeira" class="bandeira-tabela" src="" alt="">
+                    <span id="elenco-treinador-pais">—</span>
+                    <span id="elenco-treinador-idade">—</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <table class="tabela-dados tabela-elenco">
+        <thead>
+            <tr>
+                <th class="col-numero">#</th>
+                <th class="col-jogador">JOGADOR</th>
+                <th>POS</th>
+                <th>IDADE</th>
+                <th class="col-clube">CLUBE</th>
+                <th>VALOR</th>
+                <th>J</th>
+                <th>G</th>
+                <th>A</th>
+                <th class="th-icone-cartao" title="Cartões Amarelos"><span class="icone-cartao icone-cartao-amarelo"></span></th>
+                <th class="th-icone-cartao" title="Cartões Vermelhos"><span class="icone-cartao icone-cartao-vermelho"></span></th>
+            </tr>
+        </thead>
+        <tbody id="corpo-elenco">
+            <tr><td colspan="11" class="item-carregando">Carregando…</td></tr>
+        </tbody>
+    </table>
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='selecoes.js') }}"></script>
+{% endblock %}

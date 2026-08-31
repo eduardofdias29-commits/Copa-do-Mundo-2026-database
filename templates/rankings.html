@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block titulo %}Estatísticas{% endblock %}
+
+{% block conteudo %}
+
+<header class="conteudo-header">
+    <h1>Estatísticas</h1>
+    <p>Principais estatísticas da Copa Mundo 2026.</p>
+</header>
+
+<div class="rankings-layout">
+
+    <nav class="rankings-menu" id="rankings-menu">
+        <div class="item-carregando">Carregando menu…</div>
+    </nav>
+
+    <section class="grid-previews rankings-destaques" id="rankings-destaques">
+
+        <div class="card-preview">
+            <div class="card-preview-header">
+                <h2><span class="preview-icone"></span> Artilheiros</h2>
+                <span class="tag-top">TOP 5</span>
+            </div>
+            <ul class="lista-preview" id="rank-lista-artilheiros">
+                <li class="item-carregando">Carregando…</li>
+            </ul>
+        </div>
+
+        <div class="card-preview">
+            <div class="card-preview-header">
+                <h2><span class="preview-icone"></span> Mais Valiosos</h2>
+                <span class="tag-top">TOP 5</span>
+            </div>
+            <ul class="lista-preview" id="rank-lista-valiosos">
+                <li class="item-carregando">Carregando…</li>
+            </ul>
+        </div>
+
+        <div class="card-preview">
+            <div class="card-preview-header">
+                <h2><span class="preview-icone"></span> Assistências</h2>
+                <span class="tag-top">TOP 5</span>
+            </div>
+            <ul class="lista-preview" id="rank-lista-assistencias">
+                <li class="item-carregando">Carregando…</li>
+            </ul>
+        </div>
+
+        <div class="card-preview">
+            <div class="card-preview-header">
+                <h2><span class="preview-icone"></span> Ranking FIFA</h2>
+                <span class="tag-top">TOP 5</span>
+            </div>
+            <ul class="lista-preview" id="rank-lista-fifa">
+                <li class="item-carregando">Carregando…</li>
+            </ul>
+        </div>
+
+    </section>
+
+    <section class="card-tabela grafico-card" id="card-grafico-valorizacao" hidden>
+        <div class="card-tabela-header">
+            <h2>Maiores Valorizações</h2>
+        </div>
+        <p class="grafico-subtitulo">Dados de valor de mercado obtidos via Transfermarkt.</p>
+        <h3 class="grafico-titulo-central">MAIS VALORIZARAM</h3>
+        <div id="grafico-valorizacao-svg" class="grafico-svg-wrap"></div>
+    </section>
+
+    <section class="card-tabela rankings-conteudo" id="card-ranking" hidden>
+        <div class="card-tabela-header">
+            <div class="card-tabela-header-titulo">
+                <h2 id="titulo-ranking-ativo">—</h2>
+                <span class="disclaimer-fonte" id="disclaimer-fonte" hidden></span>
+            </div>
+            <div class="card-tabela-header-direita">
+                <div class="ga-filtro" id="ga-filtro" hidden>
+                    <button type="button" class="ga-filtro-btn ativo" data-filtro="ga">G/A</button>
+                    <button type="button" class="ga-filtro-btn" data-filtro="gols">Gols</button>
+                    <button type="button" class="ga-filtro-btn" data-filtro="assistencias">Assistências</button>
+                </div>
+                <span class="tag-top" id="contador-ranking"></span>
+            </div>
+        </div>
+
+        <table class="tabela-dados tabela-ranking" id="tabela-ranking">
+            <thead id="cabecalho-ranking"></thead>
+            <tbody id="corpo-ranking">
+                <tr><td class="item-carregando">Escolha uma estatística ao lado…</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='rankings.js') }}"></script>
+{% endblock %}

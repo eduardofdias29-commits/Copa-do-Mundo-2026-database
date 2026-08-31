@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block titulo %}Estádios{% endblock %}
+
+{% block conteudo %}
+
+<header class="conteudo-header">
+    <h1>Estádios</h1>
+    <p>As 16 sedes da Copa de 2026, do maior pro menor em capacidade.</p>
+</header>
+
+<section class="estadios-grid" id="estadios-grid">
+    <div class="item-carregando">Carregando…</div>
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='estadios.js') }}"></script>
+{% endblock %}
